@@ -1,0 +1,79 @@
+  
+version: '3.8'
+services: 
+
+  airflow:
+    image: duynguyenngoc/dps-hadoop-airflow:3.3.1
+    container_name: airflow
+    restart: unless-stopped
+    volumes:
+      - ./airflow/app/:/airflow/
+      - ./share_storages/:/storages
+    environment:
+      - AIRFLOW_HOME=/airflow
+      - AIRFLOW_UID=50000
+    ports:
+      - 80:8080
+    command: airflow standalone
+    networks:
+      - bigdatanet 
+  
+  spark-master:
+    image: duynguyenngoc/hadoop-spark:3.3.2
+    container_name: spark-master
+    restart: unless-stopped
+    volumes:
+       - ./share_storages/:/storages
+    environment:
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    networks:
+     - bigdatanet
+    
+
+  spark-worker-a:
+    image: duynguyenngoc/hadoop-spark:3.3.2
+    container_name: spark-worker-a
+    restart: unless-stopped
+    volumes:
+      - ./share_storages/:/storages
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_DRIVER_MEMORY=2G
+      - SPARK_EXECUTOR_MEMORY=2G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+    ports:
+      - "8081:8080"
+      - "7001:7000"
+    networks:
+      - bigdatanet
+  
+  spark-worker-b:
+    image: duynguyenngoc/hadoop-spark:3.3.2
+    container_name: spark-worker-b
+    restart: unless-stopped
+    volumes:
+      - ./share_storages/:/storages
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_DRIVER_MEMORY=2G
+      - SPARK_EXECUTOR_MEMORY=2G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-b
+    ports:
+      - "8082:8080"
+      - "7002:7000"
+    networks:
+      - bigdatanet
+
+
+networks:
+  bigdatanet:    
