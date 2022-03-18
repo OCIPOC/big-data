@@ -26,6 +26,7 @@ RUN apt-get install -y python3-pip python3-numpy python3-matplotlib python3-scip
 # Note: we want to using tensorflow 2.8.0
 RUN add-apt-repository ppa:deadsnakes/ppa
 
+
 RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz \
     && tar -xf Python-${PYTHON_VERSION}.tar.xz && cd Python-${PYTHON_VERSION} \
     && ./configure --prefix=/usr/local/python3 --enable-optimizations \
