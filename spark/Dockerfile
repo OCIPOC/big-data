@@ -5,13 +5,14 @@ FROM python:3.9.7 as builder
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
-# Fix the value of PYTHONHASHSEED
-# Note: this is needed when you use Python 3.3 or greater
+
+# Environment setup
 ENV SPARK_VERSION=3.2.1 \
     HADOOP_VERSION=3.3.2 \
     HADOOP_VERSION_SPARK=3.2 \
     SPARK_HOME=/opt/spark \
     PYTHON_VERSION=3.9.7
+
 
 # Install OpenJDK-11
 RUN apt update && \
