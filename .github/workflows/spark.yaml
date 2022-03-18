@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths: 
-      - 'dps-spark/**'
+      - 'spark/**'
 
 env:
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }} # dockerhub pass

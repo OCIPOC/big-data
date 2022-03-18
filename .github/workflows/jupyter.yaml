@@ -5,12 +5,11 @@ on:
     branches:
       - main
     paths: 
-      - 'dps-jupyter/**'
-
+      - 'jupyterlab/**'
 env:
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }} # dockerhub pass
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # dockerhub user
-  IMAGE: duynguyenngoc/dps-jupyter-lab:3.3.1 # Image docker
+  IMAGE: duynguyenngoc/hadoop-jupyterlab:3.3.2 # Image docker
 
 jobs:
   build:
@@ -28,7 +27,7 @@ jobs:
       # [Step-3] buid and tag image from Dockerfile
       - name: Build docker image
         run: |
-          docker build -t $IMAGE --no-cache ./dps-jupyter/
+          docker build -t $IMAGE --no-cache ./jupyterlab/
       # [Step-4] Push image to docker hub
       - name: Push image to DockerHub
         run: |

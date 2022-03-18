@@ -5905,3 +5905,107 @@ AIRFLOW_CTX_DAG_RUN_ID=manual__2022-03-17T19:32:45.886946+00:00
 [2022-03-18 03:42:22,570] {spark_submit.py:488} INFO - 22/03/18 03:42:22 INFO BlockManagerInfo: Added broadcast_0_piece23 in memory on 172.23.0.2:43951 (size: 4.0 MiB, free: 954.5 MiB)
 [2022-03-18 03:42:22,595] {spark_submit.py:488} INFO - 22/03/18 03:42:22 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.23.0.2:43951 (size: 4.0 MiB, free: 950.5 MiB)
 [2022-03-18 03:42:23,001] {spark_submit.py:488} INFO - 22/03/18 03:42:23 INFO BlockManagerInfo: Added broadcast_0_python on disk on 172.23.0.2:43951 (size: 97.8 MiB)
+[2022-03-18 03:42:31,174] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 10121 ms on 172.23.0.2 (executor 1) (1/1)
+[2022-03-18 03:42:31,175] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2022-03-18 03:42:31,176] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0) finished in 10.161 s
+[2022-03-18 03:42:31,177] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-03-18 03:42:31,178] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2022-03-18 03:42:31,179] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Job 2 finished: showString at NativeMethodAccessorImpl.java:0, took 10.166379 s
+[2022-03-18 03:42:31,194] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2022-03-18 03:42:31,196] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Got job 3 (showString at NativeMethodAccessorImpl.java:0) with 3 output partitions
+[2022-03-18 03:42:31,196] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Final stage: ResultStage 3 (showString at NativeMethodAccessorImpl.java:0)
+[2022-03-18 03:42:31,197] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Parents of final stage: List()
+[2022-03-18 03:42:31,198] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Missing parents: List()
+[2022-03-18 03:42:31,199] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[11] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2022-03-18 03:42:31,201] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 27.7 KiB, free 336.1 MiB)
+[2022-03-18 03:42:31,218] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 13.2 KiB, free 336.1 MiB)
+[2022-03-18 03:42:31,222] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on a5b37975fa3a:40345 (size: 13.2 KiB, free: 336.1 MiB)
+[2022-03-18 03:42:31,228] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.23.0.2:43951 in memory (size: 13.2 KiB, free: 950.6 MiB)
+[2022-03-18 03:42:31,229] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO BlockManagerInfo: Removed broadcast_3_piece0 on a5b37975fa3a:40345 in memory (size: 13.2 KiB, free: 336.1 MiB)
+[2022-03-18 03:42:31,233] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1478
+[2022-03-18 03:42:31,235] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 3 (MapPartitionsRDD[11] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(1, 2, 3))
+[2022-03-18 03:42:31,240] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSchedulerImpl: Adding task set 3.0 with 3 tasks resource profile 0
+[2022-03-18 03:42:31,241] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 5) (172.23.0.2, executor 1, partition 1, PROCESS_LOCAL, 4605 bytes) taskResourceAssignments Map()
+[2022-03-18 03:42:31,244] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 6) (172.23.0.5, executor 0, partition 2, PROCESS_LOCAL, 4605 bytes) taskResourceAssignments Map()
+[2022-03-18 03:42:31,246] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 7) (172.23.0.2, executor 1, partition 3, PROCESS_LOCAL, 4755 bytes) taskResourceAssignments Map()
+[2022-03-18 03:42:31,271] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.23.0.2:43951 (size: 13.2 KiB, free: 950.5 MiB)
+[2022-03-18 03:42:31,352] {spark_submit.py:488} INFO - 22/03/18 03:42:31 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.23.0.5:46655 (size: 13.2 KiB, free: 1048.8 MiB)
+[2022-03-18 03:42:32,469] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece21 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1044.8 MiB)
+[2022-03-18 03:42:32,766] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece9 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1040.8 MiB)
+[2022-03-18 03:42:32,824] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece5 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1036.8 MiB)
+[2022-03-18 03:42:32,859] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece1 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1032.8 MiB)
+[2022-03-18 03:42:32,901] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece15 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1028.8 MiB)
+[2022-03-18 03:42:32,944] {spark_submit.py:488} INFO - 22/03/18 03:42:32 INFO BlockManagerInfo: Added broadcast_0_piece3 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1024.8 MiB)
+[2022-03-18 03:42:33,001] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1020.8 MiB)
+[2022-03-18 03:42:33,049] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece16 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1016.8 MiB)
+[2022-03-18 03:42:33,081] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece6 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1012.8 MiB)
+[2022-03-18 03:42:33,141] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece18 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1008.8 MiB)
+[2022-03-18 03:42:33,187] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece10 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1004.8 MiB)
+[2022-03-18 03:42:33,278] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece8 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 1000.8 MiB)
+[2022-03-18 03:42:33,326] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece19 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 996.8 MiB)
+[2022-03-18 03:42:33,366] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece2 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 992.8 MiB)
+[2022-03-18 03:42:33,423] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece4 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 988.8 MiB)
+[2022-03-18 03:42:33,494] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece7 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 984.8 MiB)
+[2022-03-18 03:42:33,540] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece24 in memory on 172.23.0.5:46655 (size: 2.2 MiB, free: 982.5 MiB)
+[2022-03-18 03:42:33,589] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece14 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 978.5 MiB)
+[2022-03-18 03:42:33,625] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece20 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 974.5 MiB)
+[2022-03-18 03:42:33,656] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece22 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 970.5 MiB)
+[2022-03-18 03:42:33,687] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece13 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 966.5 MiB)
+[2022-03-18 03:42:33,716] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece17 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 962.5 MiB)
+[2022-03-18 03:42:33,752] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece12 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 958.5 MiB)
+[2022-03-18 03:42:33,785] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece11 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 954.5 MiB)
+[2022-03-18 03:42:33,816] {spark_submit.py:488} INFO - 22/03/18 03:42:33 INFO BlockManagerInfo: Added broadcast_0_piece23 in memory on 172.23.0.5:46655 (size: 4.0 MiB, free: 950.5 MiB)
+[2022-03-18 03:42:34,318] {spark_submit.py:488} INFO - 22/03/18 03:42:34 INFO BlockManagerInfo: Added broadcast_0_python on disk on 172.23.0.5:46655 (size: 97.8 MiB)
+[2022-03-18 03:42:36,077] {spark_submit.py:488} INFO - 22/03/18 03:42:36 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 5) in 4840 ms on 172.23.0.2 (executor 1) (1/3)
+[2022-03-18 03:42:39,434] {spark_submit.py:488} INFO - 22/03/18 03:42:39 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 7) in 8195 ms on 172.23.0.2 (executor 1) (2/3)
+[2022-03-18 03:42:43,289] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 6) in 12050 ms on 172.23.0.5 (executor 0) (3/3)
+[2022-03-18 03:42:43,290] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2022-03-18 03:42:43,292] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO DAGScheduler: ResultStage 3 (showString at NativeMethodAccessorImpl.java:0) finished in 12.092 s
+[2022-03-18 03:42:43,293] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2022-03-18 03:42:43,294] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2022-03-18 03:42:43,297] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO DAGScheduler: Job 3 finished: showString at NativeMethodAccessorImpl.java:0, took 12.098315 s
+[2022-03-18 03:42:43,337] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO CodeGenerator: Code generated in 33.2003 ms
+[2022-03-18 03:42:43,344] {spark_submit.py:488} INFO - +--------------------+-----+--------------------+
+[2022-03-18 03:42:43,346] {spark_submit.py:488} INFO - |             content|class|          prediction|
+[2022-03-18 03:42:43,347] {spark_submit.py:488} INFO - +--------------------+-----+--------------------+
+[2022-03-18 03:42:43,348] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,349] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,351] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,352] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,353] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,355] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,356] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,357] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,358] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,359] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,360] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,361] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,362] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,363] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,365] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,366] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,367] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,368] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,369] {spark_submit.py:488} INFO - |//usr/local/share...|  bee|{n02206856, bee, ...|
+[2022-03-18 03:42:43,370] {spark_submit.py:488} INFO - |//usr/local/share...|  pot|{n03991062, pot, ...|
+[2022-03-18 03:42:43,372] {spark_submit.py:488} INFO - +--------------------+-----+--------------------+
+[2022-03-18 03:42:43,373] {spark_submit.py:488} INFO - only showing top 20 rows
+[2022-03-18 03:42:43,374] {spark_submit.py:488} INFO - 
+[2022-03-18 03:42:43,375] {spark_submit.py:488} INFO - None
+[2022-03-18 03:42:43,996] {spark_submit.py:488} INFO - 22/03/18 03:42:43 INFO SparkContext: Invoking stop() from shutdown hook
+[2022-03-18 03:42:44,013] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO SparkUI: Stopped Spark web UI at http://a5b37975fa3a:4040
+[2022-03-18 03:42:44,020] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2022-03-18 03:42:44,021] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+[2022-03-18 03:42:44,082] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2022-03-18 03:42:44,264] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO MemoryStore: MemoryStore cleared
+[2022-03-18 03:42:44,271] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO BlockManager: BlockManager stopped
+[2022-03-18 03:42:44,285] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2022-03-18 03:42:44,302] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2022-03-18 03:42:44,363] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO SparkContext: Successfully stopped SparkContext
+[2022-03-18 03:42:44,364] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO ShutdownHookManager: Shutdown hook called
+[2022-03-18 03:42:44,367] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO ShutdownHookManager: Deleting directory /tmp/spark-00b992ef-0c31-43d4-959a-e6c2f1f46ab7
+[2022-03-18 03:42:44,371] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO ShutdownHookManager: Deleting directory /tmp/spark-4ac37651-aaaf-4d9c-9ccf-f193effd8f23/pyspark-edf63a1d-8f9b-4874-878d-8218524e1899
+[2022-03-18 03:42:44,416] {spark_submit.py:488} INFO - 22/03/18 03:42:44 INFO ShutdownHookManager: Deleting directory /tmp/spark-4ac37651-aaaf-4d9c-9ccf-f193effd8f23
+[2022-03-18 03:42:44,996] {taskinstance.py:1272} INFO - Marking task as SUCCESS. dag_id=demo_pipeline, task_id=document_etl, execution_date=20220317T193245, start_date=20220318T032314, end_date=20220318T034244
+[2022-03-18 03:42:45,134] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-18 03:42:45,176] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

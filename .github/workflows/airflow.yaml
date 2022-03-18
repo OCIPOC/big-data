@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths: 
-      - 'dps-airflow/**'
+      - 'airflow/**'
 
 env:
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }} # dockerhub pass
