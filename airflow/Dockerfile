@@ -1,7 +1,7 @@
 ######################################################################
 # IMAGE for airflow
 ######################################################################
-FROM python:3.7
+FROM python:3.9.7
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
@@ -18,7 +18,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 
 RUN pip3 install "apache-airflow[apache.spark]==2.2.4" \
-    --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.7.txt"
+    --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.4/constraints-3.9.txt"
 
 COPY ./requirements.txt requirements.txt
 

@@ -3,17 +3,17 @@ version: '3.8'
 services: 
 
   airflow:
-    image: duynguyenngoc/dps-hadoop-airflow:3.3.1
+    image: duynguyenngoc/hadoop-airflow:3.3.2
     container_name: airflow
     restart: unless-stopped
     volumes:
       - ./airflow/app/:/airflow/
-      - ./share_storages/:/storages
+      - ./share_storages:/usr/local/share_storages
     environment:
       - AIRFLOW_HOME=/airflow
       - AIRFLOW_UID=50000
     ports:
-      - 80:8080
+      - 3000:8080
     command: airflow standalone
     networks:
       - bigdatanet 
@@ -23,7 +23,7 @@ services:
     container_name: spark-master
     restart: unless-stopped
     volumes:
-       - ./share_storages/:/storages
+      - ./share_storages:/usr/local/share_storages
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
@@ -39,7 +39,7 @@ services:
     container_name: spark-worker-a
     restart: unless-stopped
     volumes:
-      - ./share_storages/:/storages
+      - ./share_storages:/usr/local/share_storages
     environment:
       - SPARK_MASTER=spark://spark-master:7077
       - SPARK_WORKER_CORES=2
@@ -59,7 +59,7 @@ services:
     container_name: spark-worker-b
     restart: unless-stopped
     volumes:
-      - ./share_storages/:/storages
+      - ./share_storages:/usr/local/share_storages
     environment:
       - SPARK_MASTER=spark://spark-master:7077
       - SPARK_WORKER_CORES=2

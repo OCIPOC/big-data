@@ -1,9 +1,8 @@
-######################################################################
-# IMAGE for airflow
-######################################################################
-FROM python:3.9.7 as builder
+# builder step used to download and configure spark environment
+FROM openjdk:11.0.11-jre-slim-buster as builder
 
-LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
+LABEL MAINTAINER "Duy Nguyen <duynguyenngoc@hotmail.com>"
+
 
 # Fix the value of PYTHONHASHSEED
 # Note: this is needed when you use Python 3.3 or greater
@@ -13,25 +12,28 @@ ENV SPARK_VERSION=3.2.1 \
     SPARK_HOME=/opt/spark \
     PYTHON_VERSION=3.9.7
 
-# Install OpenJDK-11
-RUN apt update && \
-    apt-get install -y openjdk-11-jdk && \
-    apt-get install -y ant && \
-    apt-get clean;
-
-# Set JAVA_HOME
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
-RUN export JAVA_HOME
-
 
 # Add Dependencies for PySpark
-RUN apt-get install -y curl vim wget software-properties-common \
+RUN apt-get update && apt-get install -y curl vim wget software-properties-common \
         net-tools ca-certificates \
         build-essential zlib1g-dev libncurses5-dev libgdbm-dev \
         libnss3-dev libssl-dev libreadline-dev libffi-dev ssh
+    
+RUN apt-get install -y python3-pip python3-numpy python3-matplotlib python3-scipy python3-pandas python3-simpy
 
-RUN apt-get install -y python3-pip python3-numpy python3-matplotlib python3-scipy python3-pandas
 
+# Add Install Python3.9
+# Note: we want to using tensorflow 2.8.0
+RUN add-apt-repository ppa:deadsnakes/ppa
+
+RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz \
+    && tar -xf Python-${PYTHON_VERSION}.tar.xz && cd Python-${PYTHON_VERSION} \
+    && ./configure --prefix=/usr/local/python3 --enable-optimizations \
+    && make && make install \
+    && ln -sf /usr/local/python3/bin/python3.9 /usr/bin/python3 \
+    && ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3
+
+COPY ./lsb_release /usr/bin/lsb_release
 
 # Install Requirement python3 pip
 COPY ./requirements.txt /requirements.txt

@@ -1,0 +1,11 @@
+# Python
+__pycache__
+
+# Share Storage
+*.png
+
+# Airflow
+airflow.db
+logs/*
+!logs/.gitkeep
+airflow-webserver.pid
