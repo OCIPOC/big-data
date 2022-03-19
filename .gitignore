@@ -6,8 +6,8 @@ __pycache__
 
 # Airflow
 airflow.db
-logs/*
-!logs/.gitkeep
+airflow/app/logs/*
+!airflow/app/logs/.gitkeep
 airflow-webserver.pid
 share_storages/*
 !share_storages/spark_jobs
