@@ -6,6 +6,10 @@ share_storages/*
 !share_storages/spark_jobs
 !share_storages/.gitkeep
 
+# Jupyterlab
+jupyterlab/config/lab/*
+jupyterlab/config/migrated
+
 # Airflow
 airflow-webserver.pid
 airflow.db
