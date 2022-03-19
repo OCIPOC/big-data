@@ -2,10 +2,14 @@
 __pycache__
 
 # Share Storage
-*.png
+share_storages/*
+!share_storages/spark_jobs
+!share_storages/.gitkeep
 
 # Airflow
-airflow.db
-logs/*
-!logs/.gitkeep
 airflow-webserver.pid
+airflow.db
+airflow/app/logs/*
+!airflow/app/logs/.gitkeep
+
+
