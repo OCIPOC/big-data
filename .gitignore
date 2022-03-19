@@ -9,3 +9,6 @@ airflow.db
 logs/*
 !logs/.gitkeep
 airflow-webserver.pid
+share_storages/*
+!share_storages/spark_jobs
+!share_storages/.gitkeep
