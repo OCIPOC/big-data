@@ -1,9 +1,11 @@
 # Python
 __pycache__
+.ipynb_checkpoints
 
 # Share Storage
 share_storages/*
 !share_storages/spark_jobs
+!share_storages/lab
 !share_storages/.gitkeep
 
 # Jupyterlab
