@@ -18,7 +18,7 @@ RUN export JAVA_HOME
 
 # Copy lab config
 COPY ./config/jupyter_lab_config.py /root/.jupyter/jupyter_lab_config.py
-COPY ./config/jupyter_server_config.py /root/.jupyter/jupyter_server_config.py
+COPY ./config/jupyter_server_config.json /root/.jupyter/jupyter_server_config.json
 
 
 # Install Requirement python3 pip
